@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "HenrikGram_Test",
+			"Path": "C:\\Users\\Henrik\\Documents\\GitHub\\HenrikGram_InternshipTest_KongOrange\\HenrikGram_Test\\Source\\HenrikGram_Test.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "HenrikGram_TestEditor",
+			"Path": "C:\\Users\\Henrik\\Documents\\GitHub\\HenrikGram_InternshipTest_KongOrange\\HenrikGram_Test\\Source\\HenrikGram_TestEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
