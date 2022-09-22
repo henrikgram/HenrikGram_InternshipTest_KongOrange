@@ -41,5 +41,11 @@
     <ClInclude Include="..\..\Source\HenrikGram_Test\HenrikGram_TestGameModeBase.h">
       <Filter>Source\HenrikGram_Test</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\HenrikGram_Test\PlayerPawn.cpp">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HenrikGram_Test\PlayerPawn.h">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
