@@ -1,0 +1,12 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\Henrik\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\Henrik\Documents\GitHub\HenrikGram_InternshipTest_KongOrange).
+  Building HenrikGram_TestEditor...
+  Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  [Adaptive Build] Excluded from HenrikGram_Test unity file: PlayerPawn.cpp
+  Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+    Executing up to 8 processes, one per physical core
+  Building 1 action with 1 process...
+  [1/1] WriteMetadata HenrikGram_TestEditor.target
+  Total time in Parallel executor: 0,28 seconds
+  Total execution time: 3,52 seconds

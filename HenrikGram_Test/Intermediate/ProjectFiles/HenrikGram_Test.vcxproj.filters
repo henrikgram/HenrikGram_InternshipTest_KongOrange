@@ -23,6 +23,15 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
     <Filter Include="Source\HenrikGram_Test">
       <UniqueIdentifier>{5EF1A4E9-1F38-3F72-9214-77ECBEFA3224}</UniqueIdentifier>
     </Filter>
@@ -39,6 +48,12 @@
       <Filter>Source\HenrikGram_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\HenrikGram_Test\HenrikGram_TestGameModeBase.h">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\HenrikGram_Test\PlayerCharacter.cpp">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HenrikGram_Test\PlayerCharacter.h">
       <Filter>Source\HenrikGram_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\HenrikGram_Test\PlayerPawn.cpp">

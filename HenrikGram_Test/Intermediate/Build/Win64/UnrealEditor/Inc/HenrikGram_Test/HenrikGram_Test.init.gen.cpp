@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeHenrikGram_Test_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xBD00C8B1,
-				0x001928C0,
+				0x90C80DDD,
+				0x24E55DBC,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_HenrikGram_Test.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_HenrikGram_Test.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_HenrikGram_Test(Z_Construct_UPackage__Script_HenrikGram_Test, TEXT("/Script/HenrikGram_Test"), Z_Registration_Info_UPackage__Script_HenrikGram_Test, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xBD00C8B1, 0x001928C0));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_HenrikGram_Test(Z_Construct_UPackage__Script_HenrikGram_Test, TEXT("/Script/HenrikGram_Test"), Z_Registration_Info_UPackage__Script_HenrikGram_Test, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x90C80DDD, 0x24E55DBC));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

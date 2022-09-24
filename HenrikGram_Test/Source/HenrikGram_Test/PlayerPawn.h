@@ -14,7 +14,7 @@ class HENRIKGRAM_TEST_API APlayerPawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	APlayerPawn();
-	void Move_XAxis(float AxisValue);
+	void Move_YAxis(float AxisValue);
 
 protected:
 	// Called when the game starts or when spawned
@@ -39,6 +39,8 @@ public:
 
 
 private:
+	float movementSpeed;
 	float runningTime;
+	FVector velocity;
 
 };
