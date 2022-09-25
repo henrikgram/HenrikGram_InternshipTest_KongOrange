@@ -8,14 +8,27 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef HENRIKGRAM_TEST_PlayerCharacter_generated_h
 #error "PlayerCharacter.generated.h already included, missing '#pragma once' in PlayerCharacter.h"
 #endif
 #define HENRIKGRAM_TEST_PlayerCharacter_generated_h
 
 #define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_SPARSE_DATA
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_RPC_WRAPPERS
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execBeginOverlap); \
+	DECLARE_FUNCTION(execOnHit);
+
+
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execBeginOverlap); \
+	DECLARE_FUNCTION(execOnHit);
+
+
 #define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \

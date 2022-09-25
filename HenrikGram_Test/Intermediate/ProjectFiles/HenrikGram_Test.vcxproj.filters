@@ -35,6 +35,12 @@
     <Filter Include="Source\HenrikGram_Test">
       <UniqueIdentifier>{5EF1A4E9-1F38-3F72-9214-77ECBEFA3224}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\HenrikGram_Test\CollisionTest.cpp">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HenrikGram_Test\CollisionTest.h">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClInclude>
     <None Include="..\..\Source\HenrikGram_Test\HenrikGram_Test.Build.cs">
       <Filter>Source\HenrikGram_Test</Filter>
     </None>
@@ -50,10 +56,22 @@
     <ClInclude Include="..\..\Source\HenrikGram_Test\HenrikGram_TestGameModeBase.h">
       <Filter>Source\HenrikGram_Test</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\HenrikGram_Test\MonsterActor.cpp">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HenrikGram_Test\MonsterActor.h">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\HenrikGram_Test\PlayerCharacter.cpp">
       <Filter>Source\HenrikGram_Test</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\HenrikGram_Test\PlayerCharacter.h">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\HenrikGram_Test\PlayerCharacterTest.cpp">
+      <Filter>Source\HenrikGram_Test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\HenrikGram_Test\PlayerCharacterTest.h">
       <Filter>Source\HenrikGram_Test</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\HenrikGram_Test\PlayerPawn.cpp">

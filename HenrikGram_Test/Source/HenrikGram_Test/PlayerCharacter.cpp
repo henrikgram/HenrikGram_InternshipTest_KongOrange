@@ -2,6 +2,8 @@
 
 
 #include "PlayerCharacter.h"
+#include "Components/CapsuleComponent.h"
+
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -9,6 +11,17 @@ APlayerCharacter::APlayerCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+//	ACharacter::GetCapsuleComponent();
+
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
+//	OnActorHit.AddDynamic(this, &APlayerCharacter::OnHit);
+	//GetCapsuleComponent().OnComponentBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
+	//GetCapsuleComponent()->OnBeginComponentOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
+	//OnActorBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
+	
+
+	//ACharacter::GetCapsuleComponent()->OnComponentHit.AddDynamic(this, &APlayerCharacter::OnCollision);
 }
 
 // Called when the game starts or when spawned
@@ -22,10 +35,11 @@ void APlayerCharacter::MoveY(float axisValue)
 {
 	if ((Controller != nullptr) && (axisValue != 0.0f))
 	{
-		FVector Dir(0,axisValue,0);
+		FVector Dir(0, axisValue,0);
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::SanitizeFloat(axisValue));
 		// add movement in that direction
-		//TODO: figure out parameters
-		AddMovementInput(Dir, axisValue);
+		//TODO: Something is not right here
+		AddMovementInput(Dir, 1);
 	}
 }
 
@@ -48,4 +62,35 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 }
+
+void APlayerCharacter::OnHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
+{
+	FColor DisplayColor = FColor::Yellow;
+	const FString DebugMessage(OtherActor->GetName());
+
+
+	if (OtherActor->ActorHasTag("lava"))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, DebugMessage);
+	}
+}
+
+void APlayerCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	FColor DisplayColor = FColor::Yellow;
+	const FString DebugMessage(OtherActor->GetName());
+
+
+	if (OtherActor->ActorHasTag("lava"))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, DebugMessage);
+	}
+}
+
+//void APlayerCharacter::OnCollision(UPrimitiveComponent* collisionComponent, AActor* otherActor, UPrimitiveComponent* OtherComponent, 
+//								   FVector NormalImpulse, const FHitResult& Hit)
+//{
+//	FString name = otherActor->GetName();
+//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "asd");
+//}
 

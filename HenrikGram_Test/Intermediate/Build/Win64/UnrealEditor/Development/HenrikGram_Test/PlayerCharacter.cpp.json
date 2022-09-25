@@ -13,7 +13,11 @@
             "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
-            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\playercharacter.generated.h"
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\playercharacter.generated.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\capsulecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

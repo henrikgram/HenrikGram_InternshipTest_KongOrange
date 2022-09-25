@@ -73,7 +73,5 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	InputComponent->BindAxis("MoveY", this, &APlayerPawn::Move_YAxis);
 
-
-
 }
 

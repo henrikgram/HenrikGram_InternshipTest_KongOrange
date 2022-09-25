@@ -1,12 +1,9 @@
-﻿  Using bundled DotNet SDK
+﻿  Cleaning HenrikGram_TestEditor and UnrealHeaderTool binaries...
+  Using bundled DotNet SDK
   Log file: C:\Users\Henrik\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\Henrik\Documents\GitHub\HenrikGram_InternshipTest_KongOrange).
-  Building HenrikGram_TestEditor...
-  Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from HenrikGram_Test unity file: PlayerPawn.cpp
-  Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
-    Executing up to 8 processes, one per physical core
-  Building 1 action with 1 process...
-  [1/1] WriteMetadata HenrikGram_TestEditor.target
-  Total time in Parallel executor: 0,28 seconds
-  Total execution time: 3,52 seconds
+  Creating makefile for HenrikGram_TestEditor (no existing makefile)
+  Parsing headers for HenrikGram_TestEditor
+    Running UnrealHeaderTool "C:\Users\Henrik\Documents\GitHub\HenrikGram_InternshipTest_KongOrange\HenrikGram_Test\HenrikGram_Test.uproject" "C:\Users\Henrik\Documents\GitHub\HenrikGram_InternshipTest_KongOrange\HenrikGram_Test\Intermediate\Build\Win64\HenrikGram_TestEditor\Development\HenrikGram_TestEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\Henrik\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+C:/Users/Henrik/Documents/GitHub/HenrikGram_InternshipTest_KongOrange/HenrikGram_Test/Source/HenrikGram_Test/HitExample.h(8): error : #include found after .generated.h file - the .generated.h file should always be the last #include in a header
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(50,5): error MSB3073: The command "D:\UE_5.0\Engine\Build\BatchFiles\Rebuild.bat HenrikGram_TestEditor Win64 Development -Project="C:\Users\Henrik\Documents\GitHub\HenrikGram_InternshipTest_KongOrange\HenrikGram_Test\HenrikGram_Test.uproject" -WaitMutex -FromMsBuild" exited with code -1.

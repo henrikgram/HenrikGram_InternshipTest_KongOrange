@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\collisiontest.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\henrikgram_testeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\development\\henrikgram_test\\definitions.henrikgram_test.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\source\\henrikgram_test\\collisiontest.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\collisiontest.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
