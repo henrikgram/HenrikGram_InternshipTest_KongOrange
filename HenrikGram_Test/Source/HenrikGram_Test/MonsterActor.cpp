@@ -11,6 +11,36 @@ AMonsterActor::AMonsterActor()
 
 }
 
+void AMonsterActor::State_LightsOff(float DeltaTime)
+{
+	movementSpeed = 100;
+
+
+}
+
+void AMonsterActor::State_LightsOn(float DeltaTime)
+{
+	if (!Target->GetVelocity().IsZero())
+	{
+		movementSpeed = 500;
+	}
+	else
+	{
+		movementSpeed = 100;
+	}
+
+}
+
+void AMonsterActor::Move(float DeltaTime)
+{
+	if (!moveDirection.IsZero())
+	{
+		//moves the actor to a new location based on the velocity and movementspeed
+		//Multiplied by deltatime to make sure the speed is consistent. 
+		SetActorLocation(GetActorLocation() + (moveDirection * DeltaTime) * movementSpeed);
+	}
+}
+
 // Called when the game starts or when spawned
 void AMonsterActor::BeginPlay()
 {
@@ -23,12 +53,9 @@ void AMonsterActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (!moveDirection.IsZero())
-	{
-		//moves the actor to a new location based on the velocity and movementspeed
-		//Multiplied by deltatime to make sure the speed is consistent. 
-		SetActorLocation(GetActorLocation() + (moveDirection * DeltaTime) * movementSpeed);
-	}
+	State_LightsOn(DeltaTime);
+
+	Move(DeltaTime);
 
 }
 

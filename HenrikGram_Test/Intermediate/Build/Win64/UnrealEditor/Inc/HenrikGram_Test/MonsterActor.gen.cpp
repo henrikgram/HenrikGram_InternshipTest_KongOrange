@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_HenrikGram_Test();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	HENRIKGRAM_TEST_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 // End Cross Module References
 	void AMonsterActor::StaticRegisterNativesAMonsterActor()
 	{
@@ -37,6 +38,10 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_moveDirection_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_moveDirection;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Target_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Target;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -65,9 +70,17 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection = { "moveDirection", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, moveDirection), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData[] = {
+		{ "Category", "MonsterActor" },
+		{ "ModuleRelativePath", "MonsterActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, Target), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonsterActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMonsterActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMonsterActor>::IsAbstract,
@@ -105,9 +118,9 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMonsterActor, AMonsterActor::StaticClass, TEXT("AMonsterActor"), &Z_Registration_Info_UClass_AMonsterActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterActor), 2090106284U) },
+		{ Z_Construct_UClass_AMonsterActor, AMonsterActor::StaticClass, TEXT("AMonsterActor"), &Z_Registration_Info_UClass_AMonsterActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterActor), 268992043U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_3035658864(TEXT("/Script/HenrikGram_Test"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_1504409066(TEXT("/Script/HenrikGram_Test"),
 		Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

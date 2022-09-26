@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "PlayerCharacter.h"
 #include "MonsterActor.generated.h"
+
 
 UCLASS()
 class HENRIKGRAM_TEST_API AMonsterActor : public AActor
@@ -23,6 +25,10 @@ public:
 	
 protected:
 	// Called when the game starts or when spawned
+
+	void State_LightsOff(float DeltaTime);
+	void State_LightsOn(float DeltaTime);
+	void Move(float DeltaTime);
 	virtual void BeginPlay() override;
 
 	//Fields
@@ -31,6 +37,8 @@ public:
 		float movementSpeed;
 	UPROPERTY(EditAnywhere)
 		FVector moveDirection;
+	UPROPERTY(EditAnywhere)
+		APlayerCharacter* Target;
 
 
 

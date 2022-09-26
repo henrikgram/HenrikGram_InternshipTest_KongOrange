@@ -19,7 +19,6 @@ APlayerCharacter::APlayerCharacter()
 	//GetCapsuleComponent().OnComponentBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
 	//GetCapsuleComponent()->OnBeginComponentOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
 	//OnActorBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
-	
 
 	//ACharacter::GetCapsuleComponent()->OnComponentHit.AddDynamic(this, &APlayerCharacter::OnCollision);
 }
@@ -71,7 +70,11 @@ void APlayerCharacter::OnHit(AActor* SelfActor, AActor* OtherActor, FVector Norm
 
 	if (OtherActor->ActorHasTag("lava"))
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, DebugMessage);
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "lava");
+	}
+	else if (OtherActor->ActorHasTag("monster"))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "monster");
 	}
 }
 
@@ -83,8 +86,13 @@ void APlayerCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 
 	if (OtherActor->ActorHasTag("lava"))
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, DebugMessage);
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "lava");
 	}
+	else if (OtherActor->ActorHasTag("monster"))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "Monster");
+	}
+	
 }
 
 //void APlayerCharacter::OnCollision(UPrimitiveComponent* collisionComponent, AActor* otherActor, UPrimitiveComponent* OtherComponent, 
