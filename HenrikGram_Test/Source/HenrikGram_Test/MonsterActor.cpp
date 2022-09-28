@@ -53,7 +53,7 @@ void AMonsterActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	State_LightsOn(DeltaTime);
+	State_LightsOff(DeltaTime);
 
 	Move(DeltaTime);
 
