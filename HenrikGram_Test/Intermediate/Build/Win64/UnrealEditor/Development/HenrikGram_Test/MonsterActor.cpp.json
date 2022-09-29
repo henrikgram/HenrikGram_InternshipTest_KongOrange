@@ -15,7 +15,19 @@
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
             "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\playercharacter.generated.h",
-            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\monsteractor.generated.h"
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\monsteractor.generated.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\source\\henrikgram_test\\lightmanager.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\spotlightcomponent.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\pointlightcomponent.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\locallightcomponent.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponentbase.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponent.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\locallightcomponent.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\pointlightcomponent.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\spotlightcomponent.generated.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\lightmanager.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

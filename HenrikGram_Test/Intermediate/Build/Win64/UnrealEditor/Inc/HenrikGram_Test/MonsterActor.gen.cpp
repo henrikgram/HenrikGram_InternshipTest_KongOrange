@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 	HENRIKGRAM_TEST_API UClass* Z_Construct_UClass_AMonsterActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_HenrikGram_Test();
+	HENRIKGRAM_TEST_API UClass* Z_Construct_UClass_ALightManager_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	HENRIKGRAM_TEST_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 // End Cross Module References
@@ -30,6 +31,10 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_lightManager_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_lightManager;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_movementSpeed_MetaData[];
 #endif
@@ -57,6 +62,13 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager_MetaData[] = {
+		{ "Category", "MonsterActor" },
+		{ "ModuleRelativePath", "MonsterActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager = { "lightManager", nullptr, (EPropertyFlags)0x0010000000000805, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, lightManager), Z_Construct_UClass_ALightManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed_MetaData[] = {
 		{ "Category", "MonsterActor" },
 		{ "ModuleRelativePath", "MonsterActor.h" },
@@ -78,6 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, Target), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonsterActor_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target,
@@ -118,9 +131,9 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMonsterActor, AMonsterActor::StaticClass, TEXT("AMonsterActor"), &Z_Registration_Info_UClass_AMonsterActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterActor), 268992043U) },
+		{ Z_Construct_UClass_AMonsterActor, AMonsterActor::StaticClass, TEXT("AMonsterActor"), &Z_Registration_Info_UClass_AMonsterActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterActor), 678130693U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_1504409066(TEXT("/Script/HenrikGram_Test"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_3849878626(TEXT("/Script/HenrikGram_Test"),
 		Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -7,8 +7,11 @@
 #include "Components/SpotLightComponent.h"
 #include "LightManager.generated.h"
 
+DECLARE_DELEGATE(FLightsOn);
+DECLARE_DELEGATE(FLightsOff);
 
 UCLASS()
+
 class HENRIKGRAM_TEST_API ALightManager : public AActor
 {
 	GENERATED_BODY()
@@ -17,6 +20,12 @@ public:
 	// Sets default values for this actor's properties
 	// Sets default values for this actor's properties
 	ALightManager();
+	bool lightsOn;
+	FLightsOn LightsOn;
+	FLightsOff LightsOff;
+	FTimerHandle TimerHandle;
+
+	void Test();
 
 protected:
 	// Called when the game starts or when spawned

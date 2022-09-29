@@ -2,6 +2,7 @@
 
 
 #include "MonsterActor.h"
+#include "LightManager.h"
 
 // Sets default values
 AMonsterActor::AMonsterActor()
@@ -9,26 +10,41 @@ AMonsterActor::AMonsterActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+
 }
 
 void AMonsterActor::State_LightsOff(float DeltaTime)
 {
-	movementSpeed = 100;
-
-
-}
-
-void AMonsterActor::State_LightsOn(float DeltaTime)
-{
+	
 	if (!Target->GetVelocity().IsZero())
 	{
-		movementSpeed = 500;
+		movementSpeed = 200;
 	}
 	else
 	{
 		movementSpeed = 100;
 	}
 
+}
+
+void AMonsterActor::State_LightsOn(float DeltaTime)
+{
+	movementSpeed = 100;
+
+}
+
+void AMonsterActor::OnLightsOn()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, FString::Printf(TEXT("Bool: %s"), lightsOn ? TEXT("true") : TEXT("false")));
+
+	lightsOn = true;
+}
+
+void AMonsterActor::OnLightsOff()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, FString::Printf(TEXT("Bool: %s"), lightsOn ? TEXT("true") : TEXT("false")));
+
+	lightsOn = false;
 }
 
 void AMonsterActor::Move(float DeltaTime)
@@ -45,15 +61,30 @@ void AMonsterActor::Move(float DeltaTime)
 void AMonsterActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	if (lightManager != nullptr)
+	{
+		//TODO: DESTRUCTOR and memory when resetting a scene
+		lightManager->LightsOn.BindUObject(this, &AMonsterActor::OnLightsOn);
+		lightManager->LightsOff.BindUObject(this, &AMonsterActor::OnLightsOff);
+	}
+
 }
 
 // Called every frame
 void AMonsterActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	State_LightsOff(DeltaTime);
+	
+	if (lightsOn)
+	{
+		State_LightsOn(DeltaTime);
+	}
+	else
+	{
+		State_LightsOff(DeltaTime);
+	}
+	
 
 	Move(DeltaTime);
 

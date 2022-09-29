@@ -19,6 +19,12 @@ public:
 	// Sets default values for this actor's properties
 	AMonsterActor();
 
+	//TODO: read about uproperty
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
+		class ALightManager* lightManager;
+
+	bool lightsOn;
+
 	//Overrides
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -28,6 +34,10 @@ protected:
 
 	void State_LightsOff(float DeltaTime);
 	void State_LightsOn(float DeltaTime);
+
+	void OnLightsOn();
+	void OnLightsOff();
+
 	void Move(float DeltaTime);
 	virtual void BeginPlay() override;
 
@@ -39,8 +49,5 @@ public:
 		FVector moveDirection;
 	UPROPERTY(EditAnywhere)
 		APlayerCharacter* Target;
-
-
-
 
 };

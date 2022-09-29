@@ -10,7 +10,29 @@ ALightManager::ALightManager()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	lightsOn = true;
 
+}
+
+void ALightManager::Test()
+{
+	//TODO: change names
+	if (lightsOn)
+	{
+		LightsOff.ExecuteIfBound();
+	}
+	else
+	{
+		LightsOn.ExecuteIfBound();
+	}
+
+
+
+	for (auto& i : lights)
+	{
+		i->SetVisibility(lightsOn);
+	}
+	lightsOn = !lightsOn;
 }
 
 // Called when the game starts or when spawned
@@ -32,6 +54,8 @@ void ALightManager::BeginPlay()
 		
 	}
 
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &ALightManager::Test, 5.0f, true, 1.0f);
+
 	
 }
 
@@ -40,10 +64,7 @@ void ALightManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	for (auto& i : lights)
-	{
-		i->SetLightColor(FColor(255, 255, 0));
-	}
+
 
 }
 
