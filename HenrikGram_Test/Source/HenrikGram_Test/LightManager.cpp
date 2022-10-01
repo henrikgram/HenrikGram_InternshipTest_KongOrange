@@ -19,20 +19,21 @@ void ALightManager::Test()
 	//TODO: change names
 	if (lightsOn)
 	{
-		LightsOff.ExecuteIfBound();
+		LightsTurnedOff.ExecuteIfBound();
 	}
 	else
 	{
-		LightsOn.ExecuteIfBound();
+		LightsTurnedOn.ExecuteIfBound();
 	}
 
-
+	lightsOn = !lightsOn;
 
 	for (auto& i : lights)
 	{
 		i->SetVisibility(lightsOn);
 	}
-	lightsOn = !lightsOn;
+
+
 }
 
 // Called when the game starts or when spawned
@@ -54,7 +55,7 @@ void ALightManager::BeginPlay()
 		
 	}
 
-	GetWorldTimerManager().SetTimer(TimerHandle, this, &ALightManager::Test, 5.0f, true, 1.0f);
+	//GetWorldTimerManager().SetTimer(TimerHandle, this, &ALightManager::Test, 5.0f, true, 1.0f);
 
 	
 }

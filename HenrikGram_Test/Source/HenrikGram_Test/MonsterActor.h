@@ -25,6 +25,8 @@ public:
 
 	bool lightsOn;
 
+	
+
 	//Overrides
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -38,12 +40,30 @@ protected:
 	void OnLightsOn();
 	void OnLightsOff();
 
+	void (AMonsterActor::* currentState)(float) = NULL;
+
+
+	
 	void Move(float DeltaTime);
 	virtual void BeginPlay() override;
 
 	//Fields
+	//TODO: tooltip
 public:
 	UPROPERTY(EditAnywhere)
+		float movementSpeedLightsOn;
+	UPROPERTY(EditAnywhere)
+		float movementSpeedLightsOff;
+
+	UPROPERTY(EditAnywhere)
+		float SlowdownStartDistance;
+	UPROPERTY(EditAnywhere, meta = (ClampMin = 0, ClampMax = 1))
+		float MaximumSlowdown;
+
+	UPROPERTY(EditAnywhere)
+		UCurveFloat* SlowdownCurve;
+
+
 		float movementSpeed;
 	UPROPERTY(EditAnywhere)
 		FVector moveDirection;

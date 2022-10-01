@@ -8,15 +8,37 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ACharacter;
 #ifdef HENRIKGRAM_TEST_HenrikGram_TestGameModeBase_generated_h
 #error "HenrikGram_TestGameModeBase.generated.h already included, missing '#pragma once' in HenrikGram_TestGameModeBase.h"
 #endif
 #define HENRIKGRAM_TEST_HenrikGram_TestGameModeBase_generated_h
 
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_SPARSE_DATA
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_RPC_WRAPPERS
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_13_DELEGATE \
+struct _Script_HenrikGram_Test_eventOnPlayerDied_Parms \
+{ \
+	ACharacter* Character; \
+}; \
+static inline void FOnPlayerDied_DelegateWrapper(const FMulticastScriptDelegate& OnPlayerDied, ACharacter* Character) \
+{ \
+	_Script_HenrikGram_Test_eventOnPlayerDied_Parms Parms; \
+	Parms.Character=Character; \
+	OnPlayerDied.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_SPARSE_DATA
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execPlayerDied);
+
+
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execPlayerDied);
+
+
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAHenrikGram_TestGameModeBase(); \
 	friend struct Z_Construct_UClass_AHenrikGram_TestGameModeBase_Statics; \
@@ -25,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(AHenrikGram_TestGameModeBase)
 
 
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_INCLASS \
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesAHenrikGram_TestGameModeBase(); \
 	friend struct Z_Construct_UClass_AHenrikGram_TestGameModeBase_Statics; \
@@ -34,7 +56,7 @@ public: \
 	DECLARE_SERIALIZER(AHenrikGram_TestGameModeBase)
 
 
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AHenrikGram_TestGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AHenrikGram_TestGameModeBase) \
@@ -47,7 +69,7 @@ private: \
 public:
 
 
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AHenrikGram_TestGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,25 +82,25 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AHenrikGram_TestGameModeBase)
 
 
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_12_PROLOG
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_GENERATED_BODY_LEGACY \
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_PROLOG
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_SPARSE_DATA \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_RPC_WRAPPERS \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_INCLASS \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_SPARSE_DATA \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_RPC_WRAPPERS \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_INCLASS \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_GENERATED_BODY \
+#define FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_SPARSE_DATA \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_SPARSE_DATA \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_INCLASS_NO_PURE_DECLS \
+	FID_HenrikGram_Test_Source_HenrikGram_Test_HenrikGram_TestGameModeBase_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

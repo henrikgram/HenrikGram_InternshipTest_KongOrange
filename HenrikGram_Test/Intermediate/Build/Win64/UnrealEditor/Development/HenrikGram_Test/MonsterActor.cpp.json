@@ -27,7 +27,11 @@
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\locallightcomponent.generated.h",
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\pointlightcomponent.generated.h",
             "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\spotlightcomponent.generated.h",
-            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\lightmanager.generated.h"
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\lightmanager.generated.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\spherecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

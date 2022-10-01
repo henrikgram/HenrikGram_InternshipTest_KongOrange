@@ -3,6 +3,7 @@
 
 #include "PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
+#include "HenrikGram_TestGameModeBase.h"
 
 
 // Sets default values
@@ -13,6 +14,8 @@ APlayerCharacter::APlayerCharacter()
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
 //	ACharacter::GetCapsuleComponent();
+
+
 
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
 //	OnActorHit.AddDynamic(this, &APlayerCharacter::OnHit);
@@ -42,6 +45,18 @@ void APlayerCharacter::MoveY(float axisValue)
 	}
 }
 
+void APlayerCharacter::Die()
+{
+	if (UWorld* World = GetWorld())
+	{
+		if (AHenrikGram_TestGameModeBase* gameMode = Cast<AHenrikGram_TestGameModeBase>(World->GetAuthGameMode()))
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, "death");
+
+			gameMode->GetOnPlayerDied().Broadcast(this);
+		}
+	}
+}
 
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)
@@ -62,21 +77,21 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 }
 
-void APlayerCharacter::OnHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
-{
-	FColor DisplayColor = FColor::Yellow;
-	const FString DebugMessage(OtherActor->GetName());
-
-
-	if (OtherActor->ActorHasTag("lava"))
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "lava");
-	}
-	else if (OtherActor->ActorHasTag("monster"))
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "monster");
-	}
-}
+//void APlayerCharacter::OnHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
+//{
+//	FColor DisplayColor = FColor::Yellow;
+//	const FString DebugMessage(OtherActor->GetName());
+//
+//
+//	if (OtherActor->ActorHasTag("lava"))
+//	{
+//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "lava");
+//	}
+//	else if (OtherActor->ActorHasTag("monster"))
+//	{
+//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "monster");
+//	}
+//}
 
 void APlayerCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -87,10 +102,12 @@ void APlayerCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 	if (OtherActor->ActorHasTag("lava"))
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "lava");
+		Die();
 	}
 	else if (OtherActor->ActorHasTag("monster"))
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, DisplayColor, "Monster");
+		Die();
 	}
 	
 }

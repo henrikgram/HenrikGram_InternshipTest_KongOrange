@@ -3,48 +3,70 @@
 
 #include "MonsterActor.h"
 #include "LightManager.h"
+#include <Components/SphereComponent.h>
+
 
 // Sets default values
 AMonsterActor::AMonsterActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	currentState = &AMonsterActor::State_LightsOn;
 
 
 }
 
 void AMonsterActor::State_LightsOff(float DeltaTime)
 {
-	
+
 	if (!Target->GetVelocity().IsZero())
 	{
-		movementSpeed = 200;
+		movementSpeed = movementSpeedLightsOff;
 	}
 	else
 	{
-		movementSpeed = 100;
+		movementSpeed = movementSpeedLightsOn;
 	}
 
 }
 
 void AMonsterActor::State_LightsOn(float DeltaTime)
 {
-	movementSpeed = 100;
+	//AActor::GetComponentByClass<USphereComponent>();
+	//Only calculate the distance on the Y axis
+	float distance = abs(GetActorLocation().Y - Target->GetActorLocation().Y);
+
+	//If the player is within the slowdown threshold
+	if (distance < SlowdownStartDistance)
+	{
+		//slows down the monster based on far the player has moved in the slowdown threshold
+		float percent = (distance) / (SlowdownStartDistance);
+
+		//Shifts the percent from fx 0-100% to 20-100%
+		float PercentRelativeToMaximumSlowdown = percent * (1 - MaximumSlowdown) + MaximumSlowdown;
+
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::SanitizeFloat(PercentRelativeToMaximumSlowdown));
+		movementSpeed = movementSpeedLightsOn * PercentRelativeToMaximumSlowdown;
+	}
+	else
+	{
+		movementSpeed = movementSpeedLightsOn;
+	}
 
 }
 
 void AMonsterActor::OnLightsOn()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, FString::Printf(TEXT("Bool: %s"), lightsOn ? TEXT("true") : TEXT("false")));
-
-	lightsOn = true;
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, FString::Printf(TEXT("Bool: %s"), lightsOn ? TEXT("true") : TEXT("false")));
+	currentState = &AMonsterActor::State_LightsOn;
+	//lightsOn = true;
 }
 
 void AMonsterActor::OnLightsOff()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, FString::Printf(TEXT("Bool: %s"), lightsOn ? TEXT("true") : TEXT("false")));
-
-	lightsOn = false;
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, FString::Printf(TEXT("Bool: %s"), lightsOn ? TEXT("true") : TEXT("false")));
+	currentState = &AMonsterActor::State_LightsOff;
+	//lightsOn = false;
 }
 
 void AMonsterActor::Move(float DeltaTime)
@@ -65,26 +87,20 @@ void AMonsterActor::BeginPlay()
 	if (lightManager != nullptr)
 	{
 		//TODO: DESTRUCTOR and memory when resetting a scene
-		lightManager->LightsOn.BindUObject(this, &AMonsterActor::OnLightsOn);
-		lightManager->LightsOff.BindUObject(this, &AMonsterActor::OnLightsOff);
+		lightManager->LightsTurnedOn.BindUObject(this, &AMonsterActor::OnLightsOn);
+		lightManager->LightsTurnedOff.BindUObject(this, &AMonsterActor::OnLightsOff);
 	}
 
 }
+
+
 
 // Called every frame
 void AMonsterActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
-	if (lightsOn)
-	{
-		State_LightsOn(DeltaTime);
-	}
-	else
-	{
-		State_LightsOff(DeltaTime);
-	}
-	
+
+	(*this.*currentState)(DeltaTime);
 
 	Move(DeltaTime);
 

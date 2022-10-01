@@ -19,14 +19,12 @@ struct FHitResult;
 #define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_SPARSE_DATA
 #define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execBeginOverlap); \
-	DECLARE_FUNCTION(execOnHit);
+	DECLARE_FUNCTION(execBeginOverlap);
 
 
 #define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execBeginOverlap); \
-	DECLARE_FUNCTION(execOnHit);
+	DECLARE_FUNCTION(execBeginOverlap);
 
 
 #define FID_HenrikGram_Test_Source_HenrikGram_Test_PlayerCharacter_h_12_INCLASS_NO_PURE_DECLS \

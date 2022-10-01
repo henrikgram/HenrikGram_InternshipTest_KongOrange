@@ -21,8 +21,8 @@ public:
 	// Sets default values for this actor's properties
 	ALightManager();
 	bool lightsOn;
-	FLightsOn LightsOn;
-	FLightsOff LightsOff;
+	FLightsOn LightsTurnedOn;
+	FLightsOff LightsTurnedOff;
 	FTimerHandle TimerHandle;
 
 	void Test();

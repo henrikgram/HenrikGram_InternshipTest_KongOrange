@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_HenrikGram_Test();
 	HENRIKGRAM_TEST_API UClass* Z_Construct_UClass_ALightManager_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCurveFloat_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	HENRIKGRAM_TEST_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 // End Cross Module References
@@ -36,9 +37,25 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_lightManager;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_movementSpeed_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_movementSpeedLightsOn_MetaData[];
 #endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_movementSpeed;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_movementSpeedLightsOn;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_movementSpeedLightsOff_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_movementSpeedLightsOff;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SlowdownStartDistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_SlowdownStartDistance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaximumSlowdown_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaximumSlowdown;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SlowdownCurve_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SlowdownCurve;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_moveDirection_MetaData[];
 #endif
@@ -64,17 +81,49 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager_MetaData[] = {
 		{ "Category", "MonsterActor" },
+		{ "Comment", "//TODO: read about uproperty\n" },
 		{ "ModuleRelativePath", "MonsterActor.h" },
+		{ "ToolTip", "TODO: read about uproperty" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager = { "lightManager", nullptr, (EPropertyFlags)0x0010000000000805, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, lightManager), Z_Construct_UClass_ALightManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOn_MetaData[] = {
 		{ "Category", "MonsterActor" },
 		{ "ModuleRelativePath", "MonsterActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed = { "movementSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, movementSpeed), METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed_MetaData)) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOn = { "movementSpeedLightsOn", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, movementSpeedLightsOn), METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOn_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOff_MetaData[] = {
+		{ "Category", "MonsterActor" },
+		{ "ModuleRelativePath", "MonsterActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOff = { "movementSpeedLightsOff", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, movementSpeedLightsOff), METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOff_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOff_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownStartDistance_MetaData[] = {
+		{ "Category", "MonsterActor" },
+		{ "ModuleRelativePath", "MonsterActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownStartDistance = { "SlowdownStartDistance", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, SlowdownStartDistance), METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownStartDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownStartDistance_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_MaximumSlowdown_MetaData[] = {
+		{ "Category", "MonsterActor" },
+		{ "ClampMax", "1" },
+		{ "ClampMin", "0" },
+		{ "ModuleRelativePath", "MonsterActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_MaximumSlowdown = { "MaximumSlowdown", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, MaximumSlowdown), METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_MaximumSlowdown_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_MaximumSlowdown_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownCurve_MetaData[] = {
+		{ "Category", "MonsterActor" },
+		{ "ModuleRelativePath", "MonsterActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownCurve = { "SlowdownCurve", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, SlowdownCurve), Z_Construct_UClass_UCurveFloat_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownCurve_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownCurve_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection_MetaData[] = {
 		{ "Category", "MonsterActor" },
@@ -91,7 +140,11 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMonsterActor, Target), Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonsterActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_lightManager,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOn,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_movementSpeedLightsOff,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownStartDistance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_MaximumSlowdown,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_SlowdownCurve,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_moveDirection,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterActor_Statics::NewProp_Target,
 	};
@@ -131,9 +184,9 @@ void EmptyLinkFunctionForGeneratedCodeMonsterActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMonsterActor, AMonsterActor::StaticClass, TEXT("AMonsterActor"), &Z_Registration_Info_UClass_AMonsterActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterActor), 678130693U) },
+		{ Z_Construct_UClass_AMonsterActor, AMonsterActor::StaticClass, TEXT("AMonsterActor"), &Z_Registration_Info_UClass_AMonsterActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterActor), 1421796667U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_3849878626(TEXT("/Script/HenrikGram_Test"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_508172719(TEXT("/Script/HenrikGram_Test"),
 		Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HenrikGram_Test_Source_HenrikGram_Test_MonsterActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

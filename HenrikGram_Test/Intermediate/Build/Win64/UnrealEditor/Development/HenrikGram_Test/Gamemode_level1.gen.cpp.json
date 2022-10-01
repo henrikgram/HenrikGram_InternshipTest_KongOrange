@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\gamemode_level1.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\henrikgram_testeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\development\\henrikgram_test\\definitions.henrikgram_test.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\source\\henrikgram_test\\gamemode_level1.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\source\\henrikgram_test\\henrikgram_testgamemodebase.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "d:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\serverstatreplicator.generated.h",
+            "d:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamemodebase.generated.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\henrikgram_testgamemodebase.generated.h",
+            "c:\\users\\henrik\\documents\\github\\henrikgram_internshiptest_kongorange\\henrikgram_test\\intermediate\\build\\win64\\unrealeditor\\inc\\henrikgram_test\\gamemode_level1.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
