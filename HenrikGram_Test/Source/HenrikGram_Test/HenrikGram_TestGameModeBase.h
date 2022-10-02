@@ -10,9 +10,14 @@
  * 
  */
 
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerDied, ACharacter*, Character);
 
 UCLASS()
+/// <summary>
+/// This implementiation of the player respawn follows the example from Unreals documentation very closely.
+/// https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/HowTo/RespawnPlayer/
+/// </summary>
 class HENRIKGRAM_TEST_API AHenrikGram_TestGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()

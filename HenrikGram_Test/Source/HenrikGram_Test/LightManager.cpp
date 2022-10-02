@@ -52,7 +52,6 @@ void ALightManager::BeginPlay()
 			lights.Add(light);
 		}
 	
-		
 	}
 
 	//GetWorldTimerManager().SetTimer(TimerHandle, this, &ALightManager::Test, 5.0f, true, 1.0f);

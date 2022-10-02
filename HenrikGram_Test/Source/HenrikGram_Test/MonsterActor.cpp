@@ -12,8 +12,6 @@ AMonsterActor::AMonsterActor()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	currentState = &AMonsterActor::State_LightsOn;
-
-
 }
 
 void AMonsterActor::State_LightsOff(float DeltaTime)
@@ -39,10 +37,15 @@ void AMonsterActor::State_LightsOn(float DeltaTime)
 	//If the player is within the slowdown threshold
 	if (distance < SlowdownStartDistance)
 	{
+		
 		//slows down the monster based on far the player has moved in the slowdown threshold
 		float percent = (distance) / (SlowdownStartDistance);
 
-		//Shifts the percent from fx 0-100% to 20-100%
+		if (SlowdownCurve)
+		{
+			percent = SlowdownCurve->GetFloatValue(percent);
+		}
+
 		float PercentRelativeToMaximumSlowdown = percent * (1 - MaximumSlowdown) + MaximumSlowdown;
 
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::SanitizeFloat(PercentRelativeToMaximumSlowdown));
