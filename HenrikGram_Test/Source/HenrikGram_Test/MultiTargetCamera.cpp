@@ -15,11 +15,6 @@ UMultiTargetCamera::UMultiTargetCamera()
 	{
 		camera = GetOwner()->FindComponentByClass<UCameraComponent>();
 	}
-	/*if (GetOwner()->FindComponentByClass<UCameraComponent>() != nullptr)
-	{
-		camera = GetOwner()->FindComponentByClass<UCameraComponent>();
-	}*/
-	// ...
 }
 
 
@@ -27,10 +22,6 @@ UMultiTargetCamera::UMultiTargetCamera()
 void UMultiTargetCamera::BeginPlay()
 {
 	Super::BeginPlay();
-
-
-	// ...
-	
 }
 
 FVector UMultiTargetCamera::GetCenterPointBetweenTargets()
@@ -39,31 +30,45 @@ FVector UMultiTargetCamera::GetCenterPointBetweenTargets()
 	{
 		return target1->GetActorLocation();
 	}
-
+	//TODO: offsets
 	FVector t1 = target1->GetActorLocation();
 	FVector t2 = target2->GetActorLocation();
 	FVector location = GetOwner()->GetActorLocation();
 
-	FVector midPoint(location.X, (t1.Y + t2.Y) / 2, (t1.Z + t2.Z) / 2);
-
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, midPoint.ToString());
-
+	FVector midPoint(location.X, (t1.Y + t2.Y) / 2, (t1.Z + t2.Z) / 2 + ZOffset);
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::SanitizeFloat(ZOffset));
 
 	return midPoint;
 }
 
 void UMultiTargetCamera::Zoom()
 {
-
 	FVector t1 = target1->GetActorLocation();
 	FVector t2 = target2->GetActorLocation();
 
 	float distance = abs(t1.Y - t2.Y);
 	FVector location = GetOwner()->GetActorLocation();
+	//TODO: Remove hardcoded distance values
 
-	if (distance < 1300 && distance > 500)
+
+	int range = maxDistance - minDistance;
+
+	if (distance < maxDistance && distance > minDistance)
 	{
-		camera->GetOwner()->SetActorLocation(FVector(-distance, location.Y, location.Z));
+		if (ZoomFeel)
+		{
+			float percent = (distance-minDistance) / range;
+			float relativePercent = percent * (1 - minDistance) + minDistance;
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::SanitizeFloat(percent));
+
+			camera->GetOwner()->SetActorLocation(FVector(( - distance) * ZoomFeel->GetFloatValue(relativePercent), location.Y, location.Z));
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, "se");
+			camera->GetOwner()->SetActorLocation(FVector(-distance, location.Y, location.Z));
+		}
+		
 	}
 		
 }
@@ -77,7 +82,6 @@ void UMultiTargetCamera::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	GetOwner()->SetActorLocation(GetCenterPointBetweenTargets());
 	Zoom();
 
-	// 
 }
 
 

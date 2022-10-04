@@ -39,5 +39,17 @@ public:
 	UPROPERTY(EditAnywhere)
 		AActor* target2;
 
+	UPROPERTY(EditAnywhere)
+		float ZOffset;
+
+	UPROPERTY(EditAnywhere)
+		float minDistance;
+
+	UPROPERTY(EditAnywhere)
+		float maxDistance;
+
+	UPROPERTY(EditAnywhere)
+		UCurveFloat* ZoomFeel;
+
 		
 };

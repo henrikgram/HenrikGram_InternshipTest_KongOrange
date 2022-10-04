@@ -11,7 +11,11 @@ APlayerCharacter::APlayerCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	//Respond to the player input autmatically
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+	//Assigns the method to the OnComponentBegin overlap event from the capsule collider
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &APlayerCharacter::BeginOverlap);
 }
 
@@ -23,11 +27,12 @@ void APlayerCharacter::BeginPlay()
 
 void APlayerCharacter::MoveY(float axisValue)
 {
+
 	if ((Controller != nullptr) && (axisValue != 0.0f))
 	{
 		FVector Dir(0, axisValue,0);
 
-		// add movement in that direction
+		// adds movement in that direction
 		//TODO: Something is not right here
 		AddMovementInput(Dir, 1);
 	}
@@ -37,10 +42,10 @@ void APlayerCharacter::Die()
 {
 	if (UWorld* World = GetWorld())
 	{
+		//If the world has the "AHenrikGram_TestGameModeBase" game mode
 		if (AHenrikGram_TestGameModeBase* gameMode = Cast<AHenrikGram_TestGameModeBase>(World->GetAuthGameMode()))
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, "death");
-
+			//Broadcast the delegate
 			gameMode->GetOnPlayerDied().Broadcast(this);
 		}
 	}
@@ -67,9 +72,6 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 void APlayerCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	FColor DisplayColor = FColor::Yellow;
-	const FString DebugMessage(OtherActor->GetName());
-
 
 	if (OtherActor->ActorHasTag("lava"))
 	{
@@ -77,7 +79,7 @@ void APlayerCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 	}
 	else if (OtherActor->ActorHasTag("monster"))
 	{
-		//Die();
+		Die();
 	}
 	
 }

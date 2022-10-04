@@ -30,7 +30,6 @@ void AMonsterActor::State_LightsOff(float DeltaTime)
 
 void AMonsterActor::State_LightsOn(float DeltaTime)
 {
-	//AActor::GetComponentByClass<USphereComponent>();
 	//Only calculate the distance on the Y axis
 	float distance = abs(GetActorLocation().Y - Target->GetActorLocation().Y);
 
@@ -48,7 +47,7 @@ void AMonsterActor::State_LightsOn(float DeltaTime)
 
 		float PercentRelativeToMaximumSlowdown = percent * (1 - MaximumSlowdown) + MaximumSlowdown;
 
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::SanitizeFloat(PercentRelativeToMaximumSlowdown));
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::SanitizeFloat(PercentRelativeToMaximumSlowdown));
 		movementSpeed = movementSpeedLightsOn * PercentRelativeToMaximumSlowdown;
 	}
 	else
